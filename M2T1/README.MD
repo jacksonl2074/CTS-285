@@ -24,5 +24,6 @@ now we have our "venv" environment so we can install things in it
 to turn it off:
 - deactivate
 
-
+start installing requirements:
 -pip install flask
+-pip freeze > requirements.txt
