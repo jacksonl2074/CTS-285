@@ -3,6 +3,8 @@
 from flask import Flask
 
 app = Flask(__name__)
+# do any app specific setupu here
+# for instance, loading a database
 
 @app.route("/")
 def index():
