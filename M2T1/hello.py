@@ -1,6 +1,6 @@
 # minimal Flask app
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 # do any app specific setupu here
@@ -8,13 +8,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    # three quotes from multiline strings
-    return """
-    <h3>Hello CTS285!!!!!! :)</h3>
-    <p>This is a paragraph</p>
-    <a href="action">Click here</a>
-
-"""
+    # find the template in /templates
+    name = "Laura"
+    return render_template("main_page.html", name=name)
 
 @app.route("/action")
 def action():
