@@ -1,4 +1,4 @@
-# m2t1 - Webapp @1
+# M2T1 - Webapp @1
 
 ## GOALS:
 - to learn basic Flask programming
@@ -33,3 +33,9 @@ TODO: write a Flask app that does something useful!
 
 to start:
 - flask --app hello run
+
+----
+starting up again:
+- cd m2t1
+- source venv/bin/activate
+- flask --debug --app hello run
