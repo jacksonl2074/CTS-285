@@ -9,8 +9,8 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     # find the template in /templates
-    name = "Laura"
-    return render_template("main_page.html", name=name)
+    # name = "Laura"
+    return render_template("main_page.html")
 
 @app.route("/action")
 def action():
