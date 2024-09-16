@@ -1,17 +1,22 @@
 # minimal Flask app
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 # do any app specific setupu here
 # for instance, loading a database
 app.config["DEBUG"] = True  # will run in debug mode
+# TODO: make this a database or something
+comments = []
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])    # we allow posting
 def index():
-    # find the template in /templates
-    # name = "Laura"
-    return render_template("main_page.html")
+    if request.method == "GET":
+        return render_template("main_page.html", comments=comments)
+    
+    # otherwise it's a post
+    comments.append(request.form["contents"])
+    return redirect(url_for('index'))
 
 @app.route("/action")
 def action():
