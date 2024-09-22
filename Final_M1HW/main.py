@@ -6,7 +6,7 @@ Laura K. Jackson
 """
 # import functions module
 import functions as fn
-import func2 as f2
+
 
 # constants
 ADD = 1
@@ -16,20 +16,24 @@ MULTIPLY = 4
 EXIT = 5
 
 def main():
-  try:
-    choice = 0
+  """
+  Function calls menu function, allows user to pick an option for doing
+  math equations
+  """
+  choice = 0
 
-    while choice != EXIT:
-
+  while choice != EXIT:
+    
+    try:
       # call display menu function
       menu()
-
+  
       choice = int(input("Enter your choice: "))
-
+  
       # decision structure based on user input
       if choice == ADD:
         # call Add function
-        f2.add()
+        fn.add()
       elif choice == SUBTRACT:
         fn.subtract()
       elif choice == DIVIDE:
@@ -41,21 +45,22 @@ def main():
       else:
         print("Invalid input. Please try again.\n")
   
-  except ValueError:
-    print("Invalid input! Please enter a number.\n")
-    
-    # FIXME: WANT menu to repeat with prompt to enter choice
+    except ValueError:
+      print("Invalid input! Please enter a number.\n")
+        
       
 # menu function
 def menu():
-  
-    print("Welcome to the Calculator Program!")
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Divide")
-    print("4. Multiply")
-    print("5. Exit")
+  """
+  Function displays menu to user
+  """
+  print("Welcome to the Calculator Program!")
+  print("1. Add")
+  print("2. Subtract")
+  print("3. Divide")
+  print("4. Multiply")
+  print("5. Exit")
     
-
+# call main()
 if __name__ == "__main__":
   main()
