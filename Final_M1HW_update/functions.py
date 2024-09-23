@@ -38,10 +38,37 @@ def add():
 
       # call get_numbers() function
       num1, num2 = get_numbers()
-
+      
+      # call calc_add function to add numbers, gives correct answer
       total = mf.calc_add(num1, num2)
-   
-      print(f"{num1} + {num2} = {total}") 
+      
+      # determine if user answered equation correctly 
+      # user gets 2 guesses until they are shown correct answer
+      # initialize to 0, 2 respectively
+      attempts = 0
+      max_attempts = 2
+      
+      while attempts < max_attempts:
+        # user's answer to equation
+        user_answer = int(input(f"{num1} + {num2} = "))
+        
+        # compare user's answer to correct answer
+        if user_answer == total:
+            print("Correct! Well done! :)\n")
+            
+            # Set attempts to max attempts to exit the loop
+            attempts = max_attempts
+        else:
+            
+          print("EEE!!! Incorrect answer.\n")
+        
+          # keep track of user's attempts
+          attempts += 1
+      
+      # show correct answer to equation  
+      if attempts == max_attempts:
+          print("The correct answer is...")
+          print(f"{num1} + {num2} = {total}\n") 
 
       # Chat GPT: suggested assigning user_choice as variable to the repeat
       # option function
@@ -71,7 +98,33 @@ def subtract():
 
       total = mf.calc_subtract(num1, num2)
       
-      print(f"{num1} - {num2} = {total}")
+      # determine if user answered equation correctly 
+      # user gets 2 guesses until they are shown correct answer
+      # initialize to 0, 2 respectively
+      attempts = 0
+      max_attempts = 2
+      
+      while attempts < max_attempts:
+        # user's answer to equation
+        user_answer = int(input(f"{num1} - {num2} = "))
+        
+        # compare user's answer to correct answer
+        if user_answer == total:
+            print("Correct! Well done! :)\n")
+            
+            # Set attempts to max attempts to exit the loop
+            attempts = max_attempts
+        else:
+            
+          print("EEE!!! Incorrect answer.\n")
+        
+          # keep track of user's attempts
+          attempts += 1
+      
+      # show correct answer to equation  
+      if attempts == max_attempts:
+          print("The correct answer is...")
+          print(f"{num1} - {num2} = {total}\n")
       
       user_choice = repeat_option()
       
@@ -95,8 +148,34 @@ def divide():
       num1, num2 = get_numbers()
   
       quotient = mf.calc_divide(num1, num2)
-    
-      print(f"{num1} / {num2} = {quotient}")
+      
+      # determine if user answered equation correctly 
+      # user gets 2 guesses until they are shown correct answer
+      # initialize to 0, 2 respectively
+      attempts = 0
+      max_attempts = 2
+      
+      while attempts < max_attempts:
+        # user's answer to equation
+        user_answer = int(input(f"{num1} / {num2} = "))
+        
+        # compare user's answer to correct answer
+        if user_answer == quotient:
+            print("Correct! Well done! :)\n")
+            
+            # Set attempts to max attempts to exit the loop
+            attempts = max_attempts
+        else:
+            
+          print("EEE!!! Incorrect answer.\n")
+        
+          # keep track of user's attempts
+          attempts += 1
+      
+      # show correct answer to equation  
+      if attempts == max_attempts:
+          print("The correct answer is...")
+          print(f"{num1} / {num2} = {quotient}")
 
       user_choice = repeat_option()
       
@@ -121,8 +200,35 @@ def multiply():
       num1, num2 = get_numbers()
       
       product = mf.calc_multiply(num1, num2)
-
-      print(f"{num1} * {num2} = {product}")
+      
+      # determine if user answered equation correctly 
+      # user gets 2 guesses until they are shown correct answer
+      # initialize to 0, 2 respectively
+      attempts = 0
+      max_attempts = 2
+      
+      while attempts < max_attempts:
+        # user's answer to equation
+        user_answer = int(input(f"{num1} * {num2} = "))
+        
+        # compare user's answer to correct answer
+        if user_answer == product:
+            print("Correct! Well done! :)\n")
+            
+            # Set attempts to max attempts to exit the loop
+            attempts = max_attempts
+            
+        else:
+            
+          print("EEE!!! Incorrect answer.\n")
+        
+          # keep track of user's attempts
+          attempts += 1
+      
+      # show correct answer to equation  
+      if attempts == max_attempts:
+          print("The correct answer is...")
+          print(f"{num1} * {num2} = {product}")
       
       user_choice = repeat_option()
       
