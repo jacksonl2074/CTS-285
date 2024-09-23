@@ -137,6 +137,9 @@ def divide():
   """
   Function divides 2 numbers that the user inputs
   Calls function to do the math and another to repeat the function
+  
+  FIXME: How to format for floats? And it says invalid input, and goes back
+  to MAIN menu, so figure that out maybe..?
   """
   try:
     user_choice = 1  # Initialize to 1 to enter the loop
