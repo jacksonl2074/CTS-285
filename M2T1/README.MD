@@ -1,4 +1,4 @@
-# M2T1 - Webapp @1
+# M2T1 - Webapp #1
 
 ## GOALS:
 - to learn basic Flask programming
