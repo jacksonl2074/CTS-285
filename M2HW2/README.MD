@@ -37,9 +37,11 @@ to start:
 
 ----
 starting up again:
-- cd m2t1
+- cd M2HW2
 - source venv/bin/activate
-- flask --debug --app hello run
+- flask --debug --app app run
+
+- (make sure virt env is in the folder you're working in, ex: @jacksonl2074 ➜ /workspaces/CTS-285/M2HW2 (main) $ pip install virtualenv)
 
 ## M2T2
 Next, we start with a "first cut with dummy data"
