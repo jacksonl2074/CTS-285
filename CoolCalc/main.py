@@ -1,66 +1,79 @@
+# -*- coding: utf-8 -*-
 """
-CTS 285
-M1HW - Calculator
+CTS-285
+M3HW2 - Cool Calculator (Dataman)
 Laura K. Jackson
-9/2/2024
-"""
-# import functions module
-import functions as fn
+12.10.2024
 
+This program simulates a calculator for elementary-aged children. There is
+an answer checker to perform math equations, memory bank to help children with
+their most difficult problems, and the random number guesser for fun.
+"""
+# import modules
+import answerchecker as ac
+import memorybank as mb
+import rando_num as rn
 
 # constants
-ADD = 1
-SUBTRACT = 2
-DIVIDE = 3
-MULTIPLY = 4
-EXIT = 5
+ANSWER = 1
+MEMORY = 2
+GUESSER = 3
+EXIT = 4
 
+def options_menu():
+    '''
+    Function displays the main menu to user with options for using
+    calculator
+
+    '''
+    print("***Welcome to Cool Calculator!***\n")
+    print("1. Answer Checker")
+    print("2. Memory Bank")
+    print("3. Number Guesser")
+    print("4. Exit\n")
+    
+
+    
 def main():
-  """
-  Function calls menu function, allows user to pick an option for doing
-  math equations
-  """
-  choice = 0
+    '''
+    Main function calls the menu to present list of calculator options 
+    to user. Once user chooses an option, the correct function(s) is selected. 
 
-  while choice != EXIT:
+    '''
+    choice = 0
     
-    try:
-      # call display menu function
-      menu()
-  
-      choice = int(input("Enter your choice: "))
-  
-      # decision structure based on user input
-      if choice == ADD:
-        # call Add function
-        fn.add()
-      elif choice == SUBTRACT:
-        fn.subtract()
-      elif choice == DIVIDE:
-        fn.divide()
-      elif choice == MULTIPLY:
-        fn.multiply()
-      elif choice == EXIT:
-        print("Exiting program...Goodbye! :)")
-      else:
-        print("Invalid input. Please try again.\n")
-  
-    except ValueError:
-      print("Invalid input! Please enter a number.\n")
+    while choice != EXIT:
+        # try block to pull up menu and let user enter a choice
+        try:
+            options_menu()      # call menu for user to choose options
+            
+            choice = int(input("Enter your choice: "))
         
-      
-# menu function
-def menu():
-  """
-  Function displays menu to user
-  """
-  print("Welcome to the Calculator Program!")
-  print("1. Add")
-  print("2. Subtract")
-  print("3. Divide")
-  print("4. Multiply")
-  print("5. Exit")
-    
+            # decision structure based on user input
+            if choice == ANSWER:
+                # call these functions/module
+                ac.answer_checker()
+                
+            elif choice == MEMORY:
+                # call these functions/module
+                lines = mb.read_file()
+                mb.present_equations(lines)
+                
+            elif choice == GUESSER:
+                # call these functions/module
+                rn.random_number()
+                
+            elif choice == EXIT:
+                print("\nGoodbye! :) Come again soon!\n")
+                
+            else:
+                print("Invalid input. Please try again.\n")
+                
+        # exception block for invalid entry
+        except ValueError:
+              print("Invalid input! Please enter a valid option.\n")
+              
+
 # call main()
 if __name__ == "__main__":
   main()

@@ -15,7 +15,7 @@ DIVIDE = 3
 MULTIPLY = 4
 EXIT = 5
 
-def answer_checker():
+def main():
   """
   Function calls menu function, allows user to pick an option for doing
   math equations
@@ -26,7 +26,7 @@ def answer_checker():
     
     try:
       # call display menu function
-      calc_menu()
+      menu()
   
       choice = int(input("Enter your choice: "))
   
@@ -41,7 +41,7 @@ def answer_checker():
       elif choice == MULTIPLY:
         fn.multiply()
       elif choice == EXIT:
-        print("\nExiting Answer Checker...Goodbye! :)\n")
+        print("Exiting program...Goodbye! :)")
       else:
         print("Invalid input. Please try again.\n")
   
@@ -50,7 +50,7 @@ def answer_checker():
         
       
 # menu function
-def calc_menu():
+def menu():
   """
   Function displays menu to user
   """
@@ -61,3 +61,6 @@ def calc_menu():
   print("4. Multiply")
   print("5. Exit")
     
+# call main()
+if __name__ == "__main__":
+  main()
